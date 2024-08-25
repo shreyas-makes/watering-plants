@@ -2,8 +2,15 @@
 
 import { useState, useEffect } from 'react';
 
+interface Plant {
+  id: number;
+  name: string;
+  wateringInterval: number;
+  lastWatered: Date | null;
+}
+
 export default function Home() {
-  const [plants, setPlants] = useState([
+  const [plants, setPlants] = useState<Plant[]>([
     { id: 1, name: 'Monstera', wateringInterval: 21, lastWatered: null },
     { id: 2, name: 'Rose', wateringInterval: 3, lastWatered: null },
   ]);
